@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection -->
+        <property name="hibernate.connection.driver_class">
+            com.mysql.cj.jdbc.Driver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:mysql://localhost:3306/wareops_lite
+        </property>
+
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">1234@boppana</property>
+
+        <!-- Hibernate settings -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Use update after first run -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Masters -->
+        <mapping class="com.wareops.entity.Warehouse"/>
+        <mapping class="com.wareops.entity.Supplier"/>
+        <mapping class="com.wareops.entity.Customer"/>
+        <mapping class="com.wareops.entity.Product"/>
+
+        <!-- Inventory -->
+        <mapping class="com.wareops.entity.Bin"/>
+        <mapping class="com.wareops.entity.StockLedger"/>
+
+        <!-- Purchase -->
+        <mapping class="com.wareops.entity.PurchaseReceipt"/>
+        <mapping class="com.wareops.entity.PurchaseItem"/>
+
+        <!-- Sales -->
+        <mapping class="com.wareops.entity.SalesOrder"/>
+        <mapping class="com.wareops.entity.OrderItem"/>
+
+        <!-- Dispatch & Returns -->
+        <mapping class="com.wareops.entity.Dispatch"/>
+        <mapping class="com.wareops.entity.ReturnLog"/>
+
+    </session-factory>
+</hibernate-configuration>
